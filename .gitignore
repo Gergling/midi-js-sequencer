@@ -219,3 +219,6 @@ pip-log.txt
 #############
 
 mongoose-4.1.exe
+code/vendor/midi-js-soundfonts/
+code/vendor/midi.js/
+code/vendor/quadrahedron/
