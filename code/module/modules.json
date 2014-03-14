@@ -1,6 +1,7 @@
 {
 	"list": [
 		"application",
-		"indexer"
+		"collection",
+		"sequencer"
 	]
 }

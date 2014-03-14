@@ -1,7 +1,8 @@
 qh.setModule("application", {
 	app: true,
 	require: [
-		"indexer",
+		"collection",
+		"sequencer",
 	],
 	controller: [
 		"index"
