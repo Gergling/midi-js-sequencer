@@ -11,6 +11,7 @@
 
 		<!-- Modules -->
 		<link rel="stylesheet" type="text/css" href="module/application/css/style.css">
+		<link rel="stylesheet" type="text/css" href="module/sequencer/css/style.css">
 
 		<!-- 3rd Party -->
 		<script type="text/javascript" src="vendor/requirejs/requirejs.2.1.8.js"></script>
@@ -20,8 +21,25 @@
 			requirejs([
 				//"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
 				"vendor/jquery/1.9.1/jquery.min.js",
-				"https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"
+				"https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js",
+
 				// midi.js
+				"vendor/midi.js/js/MIDI/AudioDetect.js",
+				"vendor/midi.js/js/MIDI/LoadPlugin.js",
+				"vendor/midi.js/js/MIDI/Plugin.js",
+				"vendor/midi.js/js/MIDI/Player.js",
+				"vendor/midi.js/js/MusicTheory/Synesthesia.js",
+				"vendor/midi.js/js/Widgets/Loader.js",
+				"vendor/midi.js/js/Window/Event.js",
+				"vendor/midi.js/js/Window/DOMLoader.XMLHttp.js",
+				// jasmid package
+				"vendor/midi.js/inc/jasmid/stream.js",
+				"vendor/midi.js/inc/jasmid/midifile.js",
+				"vendor/midi.js/inc/jasmid/replayer.js",
+				// extras
+				"vendor/midi.js/inc/Base64.js",
+				"vendor/midi.js/inc/base64binary.js",
+
 			], function() {
 				qh.loadLib([
 					//"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
