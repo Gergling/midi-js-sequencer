@@ -6,12 +6,14 @@ qh.getModule('sequencer').directive('trackList', function() {
 		controller: [
 			"$scope", 
 			"sequencer.factory.track", 
-		function($scope, track) {
+			"sequencer.factory.bar", 
+		function($scope, track, bar) {
 			$scope.tracks = track.list;
-			$scope.newTrack = function() {track.newTrack();};
+			$scope.bars = bar.list;
+			$scope.newTrack = track.newTrack;
 
-			$scope.zoomIn = track.view.zoomIn;
-			$scope.zoomOut = track.view.zoomOut;
+			$scope.zoomIn = bar.view.zoomIn;
+			$scope.zoomOut = bar.view.zoomOut;
 		}],
 	};
 });

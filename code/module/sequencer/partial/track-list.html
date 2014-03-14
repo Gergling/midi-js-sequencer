@@ -9,7 +9,8 @@
 				<div class="track-label">Tracks</div>
 			</div>
 			<div class="column parts">
-				<div class="track-label">Parts - this 'title' actually needs a timescale and indicator of current, including controls for scaling (min/max time shown).</div>
+				<span class="icon icon-zoom-out" data-ng-click="zoomOut()"></span>
+				<span class="icon icon-zoom-in" data-ng-click="zoomIn()"></span>
 			</div>
 		</div>
 		<div class="track-row" data-ng-repeat="track in tracks">
