@@ -1,0 +1,66 @@
+.sequencer .column-container, 
+.sequencer .column-container .foreground, 
+.sequencer .column-container .foreground .track-row, 
+.sequencer .column-container .foreground .track-row .column  {
+	border-style:solid;
+	border-color:grey;
+	border-width:0;
+}
+.sequencer .column-container {
+	border-width:1px;
+	overflow:overlay;
+	height:400px;
+	position:relative;
+}
+
+.sequencer .column-container .background {
+	position:absolute;
+	top:0;
+	bottom:0;
+}
+.sequencer .column-container .background .left {
+	border-right-width:1px;
+	height:100%;
+}
+
+.sequencer .column-container .foreground .track-row {
+	height:40px;
+	border-bottom-width:1px;
+}
+.sequencer .column-container .foreground .track-row:last-child {
+	border-bottom-width:0;
+}
+.sequencer .column-container .foreground .track-row .column {
+	float:left;
+	height:inherit;
+}
+.sequencer .column-container .background .left,
+.sequencer .column-container .foreground .track-row .column.new-track,
+.sequencer .column-container .foreground .track-row .column.info {
+	width:150px;
+}
+.sequencer .column-container .foreground .track-row .column.new-track {
+}
+.sequencer .column-container .foreground .track-row .column.new-track > .btn-group {
+	margin:10px;
+}
+.sequencer .column-container .foreground .track-row .column .track-label {
+	padding:10px;
+}
+.sequencer .column-container .foreground .track-right-column, 
+.sequencer .column-container .foreground .track-left-column {
+	position:absolute;
+	top:0;
+	bottom:0;
+}
+.sequencer .column-container .foreground .track-right-column {
+	left:20%;
+}
+.sequencer .column-container .foreground .track-row .column.spare {
+	border-width:0;
+}
+.sequencer .column-container .foreground .track-right-column,
+.sequencer .column-container .foreground .track-row .column.spare,
+.sequencer .column-container .foreground .track-row .column.parts {
+	width:75%;
+}

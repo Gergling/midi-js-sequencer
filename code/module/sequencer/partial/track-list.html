@@ -1,0 +1,30 @@
+<div class="column-container track-list">
+	<div class="background">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<div class="foreground">
+		<div class="track-row">
+			<div class="column info">
+				<div class="track-label">Tracks</div>
+			</div>
+			<div class="column parts">
+				<div class="track-label">Parts - this 'title' actually needs a timescale and indicator of current, including controls for scaling (min/max time shown).</div>
+			</div>
+		</div>
+		<div class="track-row" data-ng-repeat="track in tracks">
+			<div class="column info">
+				<div class="track-label">{{track.label}}</div>
+			</div>
+			<div class="column parts"></div>
+		</div>
+		<div class="track-row">
+			<div class="column new-track">
+				<div class="btn-group">
+					<button class="btn" data-ng-click="newTrack()">New Track</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Need to split this up into the background part and the foreground tracks part -->
+</div>
