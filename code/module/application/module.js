@@ -8,7 +8,8 @@ qh.setModule("application", {
 		"index"
 	],
 	factory: [
-		"navigation"
+		"navigation",
+		"uid",
 	],
 	config: [
 		"index"
