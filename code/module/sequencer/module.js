@@ -2,8 +2,11 @@ qh.setModule("sequencer", {
 	factory: [
 		"track",
 		"bar",
+		"navigation",
+		"pattern",
 	],
 	directive: [
-		"track-list"
+		"track-list",
+		"song-control",
 	],
 });
