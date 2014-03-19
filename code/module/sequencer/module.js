@@ -5,6 +5,7 @@ qh.setModule("sequencer", {
 		"navigation",
 		"pattern",
 		"song",
+		"track-list-background",
 	],
 	directive: [
 		"track-list",
