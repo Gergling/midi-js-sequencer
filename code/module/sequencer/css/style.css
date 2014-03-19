@@ -1,4 +1,5 @@
 .sequencer .column-container, 
+.sequencer .column-container .background .left,
 .sequencer .column-container .foreground, 
 .sequencer .column-container .foreground .track-row, 
 .sequencer .column-container .foreground .track-row .column  {
@@ -17,9 +18,27 @@
 	position:absolute;
 	top:0;
 	bottom:0;
+	left:0;
+	right:0;
+}
+.sequencer .column-container .background .left,
+.sequencer .column-container .background .right {
+	/*height:100%;
+	float:left;*/
+	position:absolute;
+	top:0;
+	bottom:0;
 }
 .sequencer .column-container .background .left {
 	border-right-width:1px;
+}
+.sequencer .column-container .background .right {
+	left:150px;
+	right:0;
+}
+.sequencer .column-container .background .right .track-list-background {
+	position:absolute;
+	width:100%;
 	height:100%;
 }
 
