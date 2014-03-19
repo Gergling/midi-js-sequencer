@@ -4,9 +4,11 @@ qh.setModule("sequencer", {
 		"bar",
 		"navigation",
 		"pattern",
+		"song",
 	],
 	directive: [
 		"track-list",
 		"song-control",
+		"track-list-background",
 	],
 });
