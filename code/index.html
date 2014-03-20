@@ -41,14 +41,18 @@
 				"vendor/midi.js/inc/base64binary.js",
 
 			], function() {
-				qh.loadLib([
-					//"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
-					//"vendor/jquery/1.9.1/jquery.min.js",
-					//"https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"
-				]);
-				qh.app(function() {return document;});
-				qh.preloader(function() {return document.getElementById('preloader');});
-				qh.modules('module/modules.json');
+				requirejs([
+					"//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js",
+				], function() {
+					qh.loadLib([
+						//"https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js",
+						//"vendor/jquery/1.9.1/jquery.min.js",
+						//"https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"
+					]);
+					qh.app(function() {return document;});
+					qh.preloader(function() {return document.getElementById('preloader');});
+					qh.modules('module/modules.json');
+				});
 			});
 		</script>
 	</head>

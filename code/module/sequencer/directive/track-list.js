@@ -12,8 +12,7 @@ qh.getModule('sequencer').directive('trackList', function() {
 			$scope.bars = bar.list;
 			$scope.newTrack = track.newTrack;
 
-			$scope.zoomIn = bar.view.zoomIn;
-			$scope.zoomOut = bar.view.zoomOut;
+			$scope.zoom = bar.view;
 		}],
 	};
 });

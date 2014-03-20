@@ -13,8 +13,22 @@ qh.component('sequencer', function(ngm, qhm) {
 				obj.list.push(new Bar());
 			},
 			view: {
+				min: 4,
 				zoom: 4, // Number of visible bars
 				offset: 0, // First bar on the left
+				zoomIn: function() {
+					obj.view.zoom--;
+					obj.view.zoom = Math.max(obj.view.zoom, obj.view.min);
+					obj.view.update();
+				},
+				zoomOut: function() {
+					obj.view.zoom++;
+					obj.view.update();
+				},
+				updateFuncs: [],
+				update: function() {
+					angular.forEach(obj.view.updateFuncs, function(fnc) {fnc();});
+				},
 			},
 		};
 		// Initial bars.

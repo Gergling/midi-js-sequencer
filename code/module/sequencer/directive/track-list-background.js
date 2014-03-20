@@ -9,16 +9,11 @@ qh.getModule('sequencer').directive('trackListBackground', function() {
 			"$element", 
 			mod.getComponent('factory', 'track-list-background').getFullName(), 
 		function($scope, $element, bg) {
-			var jqCanvas = $('<canvas>').addClass('track-list-background');
+			var jqCanvas = bg.jqCanvas;
 			jqCanvas.attr('width', $element.parent().width());
 			jqCanvas.attr('height', $element.parent().height());
 			$element.append(jqCanvas);
-			if (jqCanvas[0].getContext) {
-				var ctx = jqCanvas[0].getContext('2d');
-				bg.drawBars(ctx, jqCanvas.width(), jqCanvas.height());
-			} else {
-				console.error("No context available.", jqCanvas);
-			}
+			bg.update();
 		}],
 	};
 });
