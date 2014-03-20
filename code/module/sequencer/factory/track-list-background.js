@@ -27,7 +27,6 @@ qh.component('sequencer', function(ngm, qhm) {
 				ctx.beginPath();
 
 				ctx.strokeStyle = "lightgrey";
-				ctx.fillStyle = 'lightgrey';
 				ctx.lineWidth = 1;
 				
 				ctx.imageSmoothingEnabled = false;

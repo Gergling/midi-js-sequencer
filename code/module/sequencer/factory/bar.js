@@ -16,6 +16,7 @@ qh.component('sequencer', function(ngm, qhm) {
 				min: 4,
 				zoom: 4, // Number of visible bars
 				offset: 0, // First bar on the left
+				presets: [],
 				zoomIn: function() {
 					obj.view.zoom--;
 					obj.view.zoom = Math.max(obj.view.zoom, obj.view.min);
@@ -25,14 +26,24 @@ qh.component('sequencer', function(ngm, qhm) {
 					obj.view.zoom++;
 					obj.view.update();
 				},
+				set: function(zoom) {
+					console.log(zoom);
+					obj.view.zoom = zoom;
+					obj.view.update();
+				},
 				updateFuncs: [],
 				update: function() {
+					console.log(obj.view.zoom);
 					angular.forEach(obj.view.updateFuncs, function(fnc) {fnc();});
 				},
 			},
 		};
 		// Initial bars.
 		for(var i=0;i<obj.view.zoom;i++) {obj.newBar();}
+		obj.view.presets.push(obj.view.min);
+		for(var i=1;i<=4;i++) {obj.view.presets.push(8*i);}
+		for(var i=3;i<=8;i++) {obj.view.presets.push(16*i);}
+		//for(var i=1;i<=10;i++) {obj.view.presets.push(4*i);}
 		return obj;
 	}]);
 });
