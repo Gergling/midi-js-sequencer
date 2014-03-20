@@ -1,6 +1,5 @@
 qh.getModule('sequencer').directive('trackListBackground', function() {
 	var mod = qh.getQHModule('sequencer');
-	console.log(1);
 	return {
 		restrict: 'A',
 		scope: {},
