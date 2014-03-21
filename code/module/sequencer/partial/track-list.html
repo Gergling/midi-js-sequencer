@@ -29,13 +29,13 @@
 				</div>
 			</div>
 		</div>
-		<div class="track-row" data-ng-repeat="track in tracks">
+		<div class="track-row" data-ng-repeat="track in tracks" data-ng-style="{top:((track.id+1)*40)+'px'}">
 			<div class="column info">
 				<div class="track-label">{{track.label}}</div>
 			</div>
 			<div class="column parts"></div>
 		</div>
-		<div class="track-row">
+		<div class="track-row" data-ng-style="{top:((tracks.length+1)*40)+'px'}">
 			<div class="column new-track">
 				<div class="btn-group">
 					<button class="btn" data-ng-click="newTrack()">New Track</button>

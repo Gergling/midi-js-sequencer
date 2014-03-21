@@ -23,8 +23,6 @@
 }
 .sequencer .column-container .background .left,
 .sequencer .column-container .background .right {
-	/*height:100%;
-	float:left;*/
 	position:absolute;
 	top:0;
 	bottom:0;
@@ -43,9 +41,14 @@
 	z-index:-1;
 }
 
+.sequencer .column-container .foreground {
+	position:relative;
+}
 .sequencer .column-container .foreground .track-row {
+	width:100%;
 	height:40px;
 	border-bottom-width:1px;
+	position:absolute;
 }
 .sequencer .column-container .foreground .track-row:last-child {
 	border-bottom-width:0;
@@ -53,6 +56,12 @@
 .sequencer .column-container .foreground .track-row .column {
 	float:left;
 	height:inherit;
+}
+.sequencer .column-container .foreground .track-row .column.new-track,
+.sequencer .column-container .foreground .track-row .column.spare,
+.sequencer .column-container .foreground .track-row .column.info,
+.sequencer .column-container .foreground .track-row .column.parts {
+	position:absolute;
 }
 .sequencer .column-container .background .left,
 .sequencer .column-container .foreground .track-row .column.new-track,
@@ -67,20 +76,14 @@
 .sequencer .column-container .foreground .track-row .column .track-label {
 	padding:10px;
 }
-.sequencer .column-container .foreground .track-right-column, 
-.sequencer .column-container .foreground .track-left-column {
-	position:absolute;
-	top:0;
-	bottom:0;
-}
-.sequencer .column-container .foreground .track-right-column {
-	left:20%;
+.sequencer .column-container .foreground .track-row .column.spare,
+.sequencer .column-container .foreground .track-row .column.parts {
+	left:150px;
 }
 .sequencer .column-container .foreground .track-row .column.spare {
 	border-width:0;
 }
-.sequencer .column-container .foreground .track-right-column,
 .sequencer .column-container .foreground .track-row .column.spare,
 .sequencer .column-container .foreground .track-row .column.parts {
-	width:80%;
+	right:0;
 }
