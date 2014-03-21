@@ -3,6 +3,7 @@ qh.component('sequencer', function(ngm, qhm) {
 		function() {
 			var obj = {
 				name: "Untitled song",
+				patterns: [],
 			};
 			return obj;
 		}

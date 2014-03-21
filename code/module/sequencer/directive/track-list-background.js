@@ -7,13 +7,21 @@ qh.getModule('sequencer').directive('trackListBackground', function() {
 		controller: [
 			"$scope", 
 			"$element", 
+			"$timeout", 
 			mod.getComponent('factory', 'track-list-background').getFullName(), 
-		function($scope, $element, bg) {
+		function($scope, $element, $timeout, bg) {
 			var jqCanvas = bg.jqCanvas;
-			jqCanvas.attr('width', $element.parent().width());
-			jqCanvas.attr('height', $element.parent().height());
-			$element.append(jqCanvas);
-			bg.update();
+			var attachCanvas = function() {
+				if ($element.parent().width) {
+					jqCanvas.attr('width', $element.parent().width());
+					jqCanvas.attr('height', $element.parent().height());
+					$element.append(jqCanvas);
+					bg.update();
+				} else {
+					$timeout(attachCanvas, 100);
+				}
+			};
+			attachCanvas();
 		}],
 	};
 });

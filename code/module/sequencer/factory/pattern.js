@@ -16,7 +16,8 @@
 qh.component('sequencer', function(ngm, qhm) {
 	ngm.factory(qhm.getComponent('factory', 'pattern').getFullName(), [
 		"$rootScope", 
-	function($scope) {
+		'collection.factory.Collection',
+	function($scope, Collection) {
 		var Pattern = function() {
 			var localScope = this;
 			this.id = obj.list.length;
@@ -24,7 +25,7 @@ qh.component('sequencer', function(ngm, qhm) {
 		};
 		var obj = {
 			viewing: 0,
-			list: [],
+			list: new Collection([], ['id'], ['trackId']),
 			newPattern: function() {
 				obj.list.push(new Pattern());
 			},
