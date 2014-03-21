@@ -33,7 +33,9 @@
 			<div class="column info">
 				<div class="track-label">{{track.label}}</div>
 			</div>
-			<div class="column parts"></div>
+			<div class="column parts" data-ng-click="addPattern(track.id, $event)">
+				Loop patterns for track.
+			</div>
 		</div>
 		<div class="track-row" data-ng-style="{top:((tracks.length+1)*40)+'px'}">
 			<div class="column new-track">

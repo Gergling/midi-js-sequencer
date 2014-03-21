@@ -18,6 +18,7 @@ qh.getModule('sequencer').directive('trackListBackground', function() {
 					$element.append(jqCanvas);
 					bg.update();
 				} else {
+					console.log("No parent width, had to use timeout.");
 					$timeout(attachCanvas, 100);
 				}
 			};

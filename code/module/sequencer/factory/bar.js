@@ -27,13 +27,11 @@ qh.component('sequencer', function(ngm, qhm) {
 					obj.view.update();
 				},
 				set: function(zoom) {
-					console.log(zoom);
 					obj.view.zoom = zoom;
 					obj.view.update();
 				},
 				updateFuncs: [],
 				update: function() {
-					console.log(obj.view.zoom);
 					angular.forEach(obj.view.updateFuncs, function(fnc) {fnc();});
 				},
 			},
