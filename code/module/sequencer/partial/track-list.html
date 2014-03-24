@@ -17,7 +17,7 @@
 						<span class="icon icon-zoom-out"></span>
 					</button>
 					<button type="button" class="btn btn-default" data-ng-click="zoom.zoomIn()" >
-						<span class="icon icon-zoom-in" data-ng-class="{disable: zoom.zoom<=zoom.min}"></span>
+						<span class="icon icon-zoom-in" data-ng-class="{disabled: zoom.zoom<=zoom.min}"></span>
 					</button>
 					<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 						<span class="caret"></span>
@@ -27,14 +27,29 @@
 						<li data-ng-repeat="preset in zoom.presets" data-ng-click="zoom.set(preset)"><a>{{preset}} Bars</a></li>
 					</ul>
 				</div>
+
+				<div class="btn-group">
+					<button type="button" class="btn btn-default">
+						<span class="icon icon-certificate" title="Create a new pattern in the selected area" data-ng-class="{disabled:!select.on}"></span>
+					</button>
+				</div>
 			</div>
 		</div>
-		<div class="track-row" data-ng-repeat="track in tracks" data-ng-style="{top:((track.id+1)*40)+'px'}">
+		<div class="track-row" data-ng-repeat="track in tracks" data-ng-style="{top:(($index+1)*40)+'px'}">
 			<div class="column info">
 				<div class="track-label">{{track.label}}</div>
 			</div>
-			<div class="column parts" data-ng-click="addPattern(track.id, $event)">
-				Loop patterns for track.
+			<div class="column parts">
+				<div class="track-label" data-ng-hide="track.patterns.length">Click and drag to add a pattern</div>
+				<div class="interaction-window" 
+					data-ng-mousedown="select.setStart(track.id, $event)" 
+					data-ng-mousemove="select.setChange($event)" 
+					data-ng-mouseup="select.setEnd()">
+					<div class="selection-window" 
+						data-ng-show="(select.changing || select.on) && track.id==select.trackId" 
+						data-ng-style="{left:select.start, width:select.width}" 
+						></div>
+				</div>
 			</div>
 		</div>
 		<div class="track-row" data-ng-style="{top:((tracks.length+1)*40)+'px'}">

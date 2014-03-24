@@ -87,3 +87,18 @@
 .sequencer .column-container .foreground .track-row .column.parts {
 	right:0;
 }
+.sequencer .column-container .foreground .track-row .column.parts .interaction-window,
+.sequencer .column-container .foreground .track-row .column.parts .interaction-window .selection-window {
+	position:absolute;
+	top:0;
+	bottom:0;
+}
+.sequencer .column-container .foreground .track-row .column.parts .interaction-window {
+	left:0;
+	right:0;
+}
+.sequencer .column-container .foreground .track-row .column.parts .interaction-window .selection-window {
+	z-index:-1;
+	border: solid 1px lightblue;
+	margin-top:1px;
+}

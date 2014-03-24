@@ -1,3 +1,4 @@
 [data-ng-click] {cursor:pointer;}
 
-.talent-empty {color:lightgrey;}
+.disabled {opacity:0.5;}
+
